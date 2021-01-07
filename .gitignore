@@ -1,0 +1,17 @@
+# Folders
+**/.vscode/**
+
+# Environment files
+*.env
+
+# Drawio
+requests_flow.drawio
+weather_diagram.drawio
+
+# Personal configuration
+
+
+# Log files
+
+# Executable
+**.exe
