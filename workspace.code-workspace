@@ -18,6 +18,7 @@
 			"cstring": "cpp",
 			"cwchar": "cpp",
 			"exception": "cpp",
+			"h": "cpp",
 			"initializer_list": "cpp",
 			"ios": "cpp",
 			"iosfwd": "cpp",
@@ -64,8 +65,11 @@
 			"xlocbuf": "cpp",
 			"xlocmes": "cpp",
 			"xloctime": "cpp",
-			"array": "cpp"
-		}
+			"array": "cpp",
+			"cctype": "cpp",
+			"iomanip": "cpp"
+		},
+		"workbench.colorTheme": "Visual Studio Dark"
 	},
 
 	"tasks": {
