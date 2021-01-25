@@ -5,7 +5,14 @@
 		}
 	],
 	"settings": {
-		"terminal.integrated.shellArgs.windows": ["/K", "C:\\ProgramData\\Miniconda3\\Scripts\\activate.bat cpp"],
+		// "terminal.integrated.shellArgs.windows": ["/K", "C:\\ProgramData\\Miniconda3\\Scripts\\activate.bat cpp"],
+		"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-cmd.exe",
+		"terminal.integrated.shellArgs.windows": [
+		  "--command=usr/bin/bash.exe",
+		  "-l",
+		  "-i",
+		],
+
 
 		"files.associations": {
 			"Dockerfile*": "dockerfile",
@@ -67,7 +74,20 @@
 			"xloctime": "cpp",
 			"array": "cpp",
 			"cctype": "cpp",
-			"iomanip": "cpp"
+			"iomanip": "cpp",
+			"atomic": "cpp",
+			"*.tcc": "cpp",
+			"bitset": "cpp",
+			"clocale": "cpp",
+			"cstdarg": "cpp",
+			"cwctype": "cpp",
+			"deque": "cpp",
+			"map": "cpp",
+			"memory_resource": "cpp",
+			"numeric": "cpp",
+			"optional": "cpp",
+			"string_view": "cpp",
+			"sstream": "cpp"
 		},
 		"workbench.colorTheme": "Visual Studio Dark"
 	},
@@ -143,7 +163,7 @@
 					{
 						"description": "Enable pretty-printing for gdb",
 						"text": "-enable-pretty-printing",
-						"ignoreFailures": true
+						"ignoreFailures": true,
 					}
 				],
 			},
