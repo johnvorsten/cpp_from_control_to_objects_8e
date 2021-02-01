@@ -89,7 +89,11 @@
 			"string_view": "cpp",
 			"sstream": "cpp"
 		},
-		"workbench.colorTheme": "Visual Studio Dark"
+		"workbench.colorTheme": "Visual Studio Dark",
+		"editor.minimap.size":"",
+		"editor.minimap.scale":1,
+		"editor.minimap.enabled": false,
+
 	},
 
 	"tasks": {
