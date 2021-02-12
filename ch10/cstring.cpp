@@ -66,10 +66,24 @@ int main () {
 
 
     {/*Section 10.5 - Numeric conversion functions*/
-    
+        string word = "dracula";
+        string drWord = word.substr(word.find("dr"), word.find("dr") + 4);
+        word = "George slew the dragon";
+        drWord = word.substr(word.find("dr"), word.find("dr") + 4);
+        auto x = word.find("dr");
+        x = word.find("dr") + 4;
+
+        
     }
 
+    {
+    string sentence =  "Broccoli is delicious.";
+    string secondWord;
+    auto start = sentence.find(" ");
+    auto end = sentence.find(" ", start+1);
 
+    secondWord = sentence.substr(start+1, end-start-1);
+}
 
     return 0;
 }

@@ -48,6 +48,29 @@ float* random_array_generator(int n_elements) {
     return random_array;
 }
 
+void minMax(int a, int b, int c, int* big, int* small) {
+	
+	if (a > b && a > c)
+		*big = a;
+	else if (b > a && b > c)
+		*big = b;
+	else if (c > a && c > b)
+		*big = c;
+	
+	if (a < b && a < c)
+		*small = a;
+	else if (b < a && b < c)
+		*small = b;
+	else if (c < a && c < b)
+		*small = c;
+	
+}
+
+void doubleIt(double* x) {
+	*x *= 2;
+}
+
+
 int main () {
 
     std::vector<float>* myvectorptr = new vector<float>(5);
@@ -74,6 +97,52 @@ int main () {
     random_array_ptr = nullptr;
     random_vector_ptr = nullptr;
 
+
+    {
+        /*MPL 10676*/
+        int a=31, b=5, c=19, big=0, small=0;
+        minMax(a, b, c, &big, &small);
+        std::cout << big << endl;
+
+        double x = 20.0;
+        doubleIt(&x);
+
+    }
+
+    {
+        /*MPL 10790*/
+        int** abcs = nullptr;
+        int** ip_arr = new int*[20];
+        int** ip_arr2 = new int*[20];
+
+        int int_arr[20]; // Declare a new array
+        int* integer_pointer = nullptr; // Pointer
+        int** integer_pointer_array = nullptr; // Pointer to a pointer
+        integer_pointer_array = new int*[20]; // Pointer to array of 20 pointers
+
+        // Assign a value to each pointer in the pointer array
+        for (int i = 0; i < 20; i++) {
+            (integer_pointer_array[i]) = new int;
+        }
+
+        // For the website
+        for (int i = 0; i < 20; i++) {
+            ip_arr[i] = new int;
+        }
+
+        // Allocate an array of 100 integer pointers and assign the resulting 
+        // pointer to the appropriately declared variable, ip_arr. Allocate 100 
+        // integers and assign the resulting pointers to the elements of ip_arr. 
+        // Initialize each integer value to -1.
+        int** ip_arr = nullptr;
+        ip_arr = new int*[100];
+        for (int i=0; i<100; i++) {
+            ip_arr[i] = new int(-1);
+
+        }
+
+
+    }
 
     return 0;
 }
