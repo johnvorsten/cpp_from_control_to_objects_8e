@@ -12,7 +12,9 @@
 		  "-l",
 		  "-i",
 		],
-
+		"workbench.editor.decorations.colors": true,
+		"workbench.editor.decorations.badges":true,
+		"workbench.editor.enablePreview": true,
 
 		"files.associations": {
 			"Dockerfile*": "dockerfile",
@@ -90,7 +92,7 @@
 			"sstream": "cpp"
 		},
 		"workbench.colorTheme": "Visual Studio Dark",
-		"editor.minimap.size":"",
+		"editor.minimap.size":"fill",
 		"editor.minimap.scale":1,
 		"editor.minimap.enabled": false,
 
