@@ -83,7 +83,29 @@ int main () {
     auto end = sentence.find(" ", start+1);
 
     secondWord = sentence.substr(start+1, end-start-1);
-}
+    }
+
+    {/*Testing*/
+    char c;
+    c = toupper('a');
+    c = toupper('B');
+    c = tolower('D');
+    c = toupper('e');
+
+    // Compare string objects
+    string str = "Muffin";
+    if (str == "Muffin")
+        std::cout << "Strings equal" << endl;
+
+    // Pass c-strings as pointers
+    char cstr[] = {'a','s','t','r','i','n','g', '\0'};
+    char* cstrptr = new char[8] {'a','s','t','r','i','n','g'};
+    auto res = strlen(cstr);
+    res = strlen(cstrptr);
+    
+    }
+
+
 
     return 0;
 }
