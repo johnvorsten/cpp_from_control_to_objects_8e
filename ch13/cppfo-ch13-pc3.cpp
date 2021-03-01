@@ -4,8 +4,9 @@
 • speed—an int that holds the car’s current speed
 
 In addition, the class should have the following constructor and other 
-member functions: • Constructor—The constructor should accept the car’s 
-year model and make as argu? ments. These values should be assigned to 
+member functions: 
+• Constructor—The constructor should accept the car’s 
+year model and make as arguments. These values should be assigned to 
 the object’s yearModel and make member variables. The constructor should 
 also assign 0 to the speed member variables.
 
@@ -49,6 +50,7 @@ class Car {
         }
 
     void set_make(std::string amake) {make = amake;}
+
     void set_speed(int aspeed) {
         if (aspeed > 120)
             throw std::logic_error("Cannot exceed 120 speed units");
@@ -56,9 +58,28 @@ class Car {
             speed = aspeed;
         }
 
+    void accelerate() {
+        if (speed < 120)
+            speed += 5;
+        else
+            ;
+    }
+
+    void brake() {
+        if (speed > 5)
+            speed -= 5;
+        else if (speed < 5)
+            speed = 0;
+    }
+
     int get_yearModel() {return yearModel;}
+
     std::string get_make() {return make;}
+
     int get_speed() {return speed;}
+
+    Car(int ayearModel, std::string amake, int aspeed) 
+        : yearModel(ayearModel), make(amake), speed(aspeed) {}
 
     private:
     int yearModel;
@@ -71,6 +92,26 @@ class Car {
 using namespace std;
 
 int main () {
+
+    std::cout << "Initializing Car object with {2004, 'Ford', 25}" << endl;
+    assignment::Car car {2004, "Ford", 25};
+
+    std::cout << "Initial values: " << endl;
+    std::cout << "The car year is: " << car.get_yearModel() << endl;
+    std::cout << "The car make is: " << car.get_make() << endl;
+    std::cout << "The car speed is: " << car.get_speed() << endl;
+    for (int i=0; i<5; i++) {
+        std::cout << "Calling accelerate at: " << car.get_speed() << endl;
+        car.accelerate();
+        std::cout << "The new speed is: " << car.get_speed() << endl;
+    }
+
+    std::cout << "\n\n";
+    for (int i=0; i<5; i++) {
+        std::cout << "Calling brake at: " << car.get_speed() << endl;
+        car.brake();
+        std::cout << "The new speed is: " << car.get_speed() << endl;
+    }
 
     return 0;
 }
