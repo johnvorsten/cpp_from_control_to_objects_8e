@@ -51,6 +51,5 @@ std::ostream& operator<<(ostream& os, const Employee& employee) {
     os << employee.position;
     os << ">" << std :: endl;
 
-
     return os;
 }
