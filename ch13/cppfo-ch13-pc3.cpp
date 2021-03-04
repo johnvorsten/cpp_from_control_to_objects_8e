@@ -70,7 +70,18 @@ class Car {
 
 using namespace std;
 
+bool isPalindrome(string str) {
+    std::cout << str.length() << endl;
+    std::cout << str.size() << endl;
+    return true;
+    }
+
 int main () {
+
+    char arr[20];
+    std::cout << "Enter a string: ";
+    std::cin >> arr;
+    isPalindrome(arr);
 
     return 0;
 }
