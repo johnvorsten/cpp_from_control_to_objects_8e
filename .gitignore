@@ -4,6 +4,7 @@
 # Environment files
 *.env
 
+
 # Drawio
 requests_flow.drawio
 weather_diagram.drawio
@@ -12,6 +13,13 @@ weather_diagram.drawio
 
 
 # Log files
+
+
+# Text files (Usually assignments
+*.txt
+input.txt_copy
+input.txt_encr
+input.txt_upper
 
 # Executable
 **.exe
