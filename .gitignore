@@ -1,9 +1,13 @@
 # Folders
 **/.vscode/**
+**/build/**
+**/matplotlib**/**
+
+# Make files
+*.cmake
 
 # Environment files
 *.env
-
 
 # Drawio
 requests_flow.drawio
@@ -11,9 +15,7 @@ weather_diagram.drawio
 
 # Personal configuration
 
-
 # Log files
-
 
 # Text files (Usually assignments
 *.txt
@@ -23,3 +25,6 @@ input.txt_upper
 
 # Executable
 **.exe
+
+# Other
+*.zip
