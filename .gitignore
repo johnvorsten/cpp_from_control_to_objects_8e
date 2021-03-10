@@ -1,7 +1,10 @@
 # Folders
 **/.vscode/**
 **/build/**
+**/include/**
 **/matplotlib**/**
+!*/include/*.h
+!**/include/*.cpp
 
 # Make files
 *.cmake
