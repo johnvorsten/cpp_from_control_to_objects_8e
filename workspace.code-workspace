@@ -90,7 +90,8 @@
 			"optional": "cpp",
 			"string_view": "cpp",
 			"sstream": "cpp",
-			"xtree": "cpp"
+			"xtree": "cpp",
+			"stack": "cpp"
 		},
 		"workbench.colorTheme": "Visual Studio Dark",
 		"editor.minimap.size":"fill",
