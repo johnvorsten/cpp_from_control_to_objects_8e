@@ -20,8 +20,9 @@ weather_diagram.drawio
 
 # Log files
 
-# Text files (Usually assignments
+# Text files (Usually assignments)
 *.txt
+!CMakeLists.txt
 input.txt_copy
 input.txt_encr
 input.txt_upper
