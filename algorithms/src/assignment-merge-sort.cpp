@@ -23,7 +23,7 @@ Screenshots of your test runs showing your function meets specifications.
 #include <iostream>
 #include <exception>
 // #include "./algorithms/matplotlib-cpp-master/matplotlibcpp.h"
-// #include "matplotlibcpp.h"
+#include "matplotlibcpp.h"
 
 using namespace std;
 // namespace plt = matplotlibcpp;
