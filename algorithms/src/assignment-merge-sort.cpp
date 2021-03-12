@@ -18,21 +18,205 @@ Screenshots of your test runs showing your function meets specifications.
 */
 
 #include <vector>
+#include <cassert>
+#include <initializer_list>
+#include <iostream>
+#include <exception>
 // #include "./algorithms/matplotlib-cpp-master/matplotlibcpp.h"
-#include "matplotlibcpp.h"
+// #include "matplotlibcpp.h"
 
 using namespace std;
-namespace plt = matplotlibcpp;
+// namespace plt = matplotlibcpp;
 
-
+/*Function accepting arrays explicitly*/
 template <typename T>
-vector<T> merge(T* arr1, T* arr2) {
+void merge_into(T* arr1, int left, int middle, int right, T* res) {
+    /*Merge elemetns from arr1 into a resulting array
+    inputs
+    -------
+    output
+    -------
+    */
+
+    // Create a temporary array storing values until they are sorted
+    int size1 = 0;
+    int size2 = 0;
+    T temp[];
 
 }
+
+template <typename T>
+T* merge_arrays(T* arr1, int size1, T* arr2, int size2) {
+    /*According to the specification, this function should accept
+    two arrays and return an array
+    Remember to call delete[] on the returned array
+    inputs
+    ------
+    outputs
+    -------*/
+
+    // Special cases
+    if (size1 == 1 || size2 == 1) {
+        // TODO - size 1
+    }
+    else if (size1 == 0 || size2 == 1) {
+        // TODO - empty
+    }
+
+    // Create new storage location for values
+    int* res = nullptr;
+    int new_size = size1 + size2;
+    res = new T[new_size];
+
+    // Merge arrays into one
+    int i = 0, j = 0, insert = 0;
+    // While we have not finished iterating through elements in each list
+    while (insert < new_size) {
+
+        if (arr1[i] < arr2[j] && i < size1) {
+            // Insert element from arr1 to result
+            res[insert] = arr1[i];
+            i++;
+            insert++;
+        }
+        else {
+            // Insert element from arr2 to result
+            res[insert] = arr2[j];
+            j++;
+            insert++;
+        }
+    }
+
+    return res;
+}
+
+template <typename T>
+bool test_array_equal(T* arr1, int size1, T* arr2, int size2) {
+
+    if (size1 != size2) {
+        return false;
+    }
+
+    for (int i=0; i<size1; i++) {
+        if (arr1[i] != arr2[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+template <typename T>
+bool test_array_equal(T* arr1, int size1, std::initializer_list<T> l, int size2) {
+    vector<T> arr2(l);
+
+    if (size1 != size2) {
+        return false;
+    }
+
+    for (int i=0; i<size1; i++) {
+        if (arr1[i] != arr2[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+template <typename T>
+string array_to_string(T* arr1, int size1) {
+    string res;
+    for (int i=0; i<size1; i++) {
+        res += to_string(arr1[i]);
+        res += (" ");
+    }
+
+    return res;
+}
+
+void test_merge_arrays() {
+    std::cout << "Starting: " << __func__ << endl;
+
+    {// Create two arrays to sort
+    int a1[5] {1,2,3,4,5};
+    int a2[5] {10,11,12,13,14};
+    int test[10] {1,2,3,4,5,10,11,12,13,14};
+    auto res = merge_arrays(a1, 5, a2, 5);
+    if (!test_array_equal(res, 10, test, 10) == true) {
+        string msg = "Improper merge: ";
+        msg += array_to_string(res, 10);
+        msg += " Versus ";
+        msg += array_to_string(test, 10);
+        throw std::logic_error(msg);
+    }
+    }
+
+    {// Different size arrays
+    int a1[5] {1,2,3,4,5};
+    int a2[6] {10,11,12,13,14,15};
+    int test[11] {1,2,3,4,5,10,11,12,13,14,15};
+    auto res = merge_arrays(a1, 5, a2, 6);
+    if (!test_array_equal(res, 10, test, 10) == true) {
+        string msg = "Improper merge: ";
+        msg += array_to_string(res, 10);
+        msg += " Versus ";
+        msg += array_to_string(test, 10);
+        throw std::logic_error(msg);
+    }
+    }
+
+    {// a1 is smaller than a2
+    int a1[3] {3,2,1};
+    int a2[3] {0,-1,-2};
+    int test[6] {-2,-1,0,1,2,3};
+    auto res = merge_arrays(a1, 3, a2, 3);
+    if (!test_array_equal(res, 6, test, 6) == true) {
+        string msg = "Improper merge: ";
+        msg += array_to_string(res, 10);
+        msg += " Versus ";
+        msg += array_to_string(test, 10);
+        throw std::logic_error(msg);
+    }
+    }
+    
+    {// Mixed arrays
+    int a1[4] {3,5,1,0};
+    int a2[4] {4,2,6,9};
+    int test[8] {0,1,2,3,4,5,6,9};
+    auto res = merge_arrays(a1, 4, a2, 4);
+    if (!test_array_equal(res, 8, test, 8) == true) {
+        string msg = "Improper merge: ";
+        msg += array_to_string(res, 10);
+        msg += " Versus ";
+        msg += array_to_string(test, 10);
+        throw std::logic_error(msg);
+    }
+    }
+
+    std::cout << "SUCCESS: " << __func__ << endl;
+}
+
+template <typename T>
+void print_array(T* arr1, int size1) {
+    for (int i=0; i<size1; i++) {
+        std::cout << arr1[i] << " ";
+    }
+}
+
 
 
 int main () {
 
+    try {
+        test_merge_arrays();
+    }
+    catch (std::logic_error& e) {
+        std::cout << e.what() << endl;
+    }
+    
+
+
+    /*
     {
     // Simple example
     plt::plot({1,3,2,4});
@@ -89,6 +273,7 @@ int main () {
     // show plots
     plt::show();
     }
+    */
 
     return 0;
 }
