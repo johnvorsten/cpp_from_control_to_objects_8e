@@ -16,6 +16,7 @@ A copy of a test program to test your function. Be sure to
     lists with 1 element each, lists with multiple elements.
 Screenshots of your test runs showing your function meets specifications.
 */
+#define WITHOUT_NUMPY
 
 #include <vector>
 #include <cassert>
