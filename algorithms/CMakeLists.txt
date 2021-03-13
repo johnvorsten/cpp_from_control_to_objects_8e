@@ -21,4 +21,4 @@ include_directories(include)
 # Python headers
 find_package(Python3 COMPONENTS Development)
 target_include_directories(assignment_merge_sort PRIVATE ${Python3_INCLUDE_DIRS})
-target_link_libraries(assignment_merge_sort Python3::Python)
+target_link_libraries(assignment_merge_sort Python3::Python ${Python_LIBRARY_DIRS})

@@ -23,11 +23,12 @@ Screenshots of your test runs showing your function meets specifications.
 #include <initializer_list>
 #include <iostream>
 #include <exception>
+#include <cmath>
 // #include "./algorithms/matplotlib-cpp-master/matplotlibcpp.h"
 #include "matplotlibcpp.h"
 
 using namespace std;
-// namespace plt = matplotlibcpp;
+namespace plt = matplotlibcpp;
 
 /*Function accepting arrays explicitly*/
 template <typename T>
@@ -157,11 +158,11 @@ void test_merge_arrays() {
     int a2[6] {10,11,12,13,14,15};
     int test[11] {1,2,3,4,5,10,11,12,13,14,15};
     auto res = merge_arrays(a1, 5, a2, 6);
-    if (!test_array_equal(res, 10, test, 10) == true) {
+    if (!test_array_equal(res, 11, test, 11) == true) {
         string msg = "Improper merge: ";
-        msg += array_to_string(res, 10);
+        msg += array_to_string(res, 11);
         msg += " Versus ";
-        msg += array_to_string(test, 10);
+        msg += array_to_string(test, 11);
         throw std::logic_error(msg);
     }
     }
@@ -173,9 +174,9 @@ void test_merge_arrays() {
     auto res = merge_arrays(a1, 3, a2, 3);
     if (!test_array_equal(res, 6, test, 6) == true) {
         string msg = "Improper merge: ";
-        msg += array_to_string(res, 10);
+        msg += array_to_string(res, 6);
         msg += " Versus ";
-        msg += array_to_string(test, 10);
+        msg += array_to_string(test, 6);
         throw std::logic_error(msg);
     }
     }
@@ -187,9 +188,9 @@ void test_merge_arrays() {
     auto res = merge_arrays(a1, 4, a2, 4);
     if (!test_array_equal(res, 8, test, 8) == true) {
         string msg = "Improper merge: ";
-        msg += array_to_string(res, 10);
+        msg += array_to_string(res, 8);
         msg += " Versus ";
-        msg += array_to_string(test, 10);
+        msg += array_to_string(test, 8);
         throw std::logic_error(msg);
     }
     }
@@ -216,8 +217,6 @@ int main () {
     }
     
 
-
-    /*
     {
     // Simple example
     plt::plot({1,3,2,4});
@@ -231,7 +230,7 @@ int main () {
     std::vector<double> x(n), y(n), z(n), w(n,2);
     for(int i=0; i<n; ++i) {
         x.at(i) = i*i;
-        y.at(i) = sin(2*M_PI*i/360.0);
+        y.at(i) = sin(2 * M_PI * i/360.0);
         z.at(i) = log(i);
     }
 
@@ -274,7 +273,7 @@ int main () {
     // show plots
     plt::show();
     }
-    */
+    
 
     return 0;
 }

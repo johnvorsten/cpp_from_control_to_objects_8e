@@ -4,6 +4,7 @@
 			"path": "."
 		}
 	],
+
 	"settings": {
 		// "terminal.integrated.shellArgs.windows": ["/K", "C:\\ProgramData\\Miniconda3\\Scripts\\activate.bat cpp"],
 		"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-cmd.exe",
