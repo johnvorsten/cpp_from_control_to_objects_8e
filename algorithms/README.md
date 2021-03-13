@@ -106,3 +106,7 @@ TODO - Change ${workspaceRoot}/build to ${currentWorkingDirectory}/../build to m
     }
 }
 ```
+
+# Compiler arguments example
+I have libaries to include at C:\src\include
+My file is located somewhere like C:/users/myself/VSCodeProjects/Project1/src/example.cpp

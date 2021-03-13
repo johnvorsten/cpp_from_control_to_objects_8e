@@ -19,6 +19,6 @@ add_executable(assignment_merge_sort ${SOURCES})
 # Bring in headers into the project
 include_directories(include)
 # Python headers
-find_package(Python3 COMPONENTS Development)
-target_include_directories(assignment_merge_sort PRIVATE ${Python3_INCLUDE_DIRS})
-target_link_libraries(assignment_merge_sort Python3::Python ${Python_LIBRARY_DIRS})
+find_package(Python3 COMPONENTS Development Numpy)
+target_include_directories(assignment_merge_sort PRIVATE ${Python3_INCLUDE_DIRS} ${Python2_NumPy_INCLUDE_DIRS})
+target_link_libraries(assignment_merge_sort Python3::Python ${Python_LIBRARY_DIRS} Python3::NumPy)

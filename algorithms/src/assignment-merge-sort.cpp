@@ -25,7 +25,9 @@ Screenshots of your test runs showing your function meets specifications.
 #include <exception>
 #include <cmath>
 // #include "./algorithms/matplotlib-cpp-master/matplotlibcpp.h"
-#include "matplotlibcpp.h"
+// #include "matplotlibcpp.h"
+#include <boost/lambda/lambda.hpp>
+#include <algorithm>
 
 using namespace std;
 namespace plt = matplotlibcpp;
