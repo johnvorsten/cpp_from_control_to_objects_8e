@@ -34,6 +34,11 @@ bool isPalindrome(string& palindrome, std::string::iterator it_start, std::strin
     return res; // Return the result of the recursion
 };
 
+bool isPalindrome(string s) {
+    auto res = isPalindrome(s, s.begin(), s.end());
+    return res;
+}
+
 
 string user_input() {
     string input;

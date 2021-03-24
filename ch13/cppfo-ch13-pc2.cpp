@@ -1,15 +1,15 @@
 /*Chapter 13 programming challenge 2
 
 Employee Class Write a class named Employee that has the following member variables:
-• name—a string that holds the employee’s name • idNumber—a n int variable that 
-holds the employee’s ID number • department—a string that holds the name of the 
-department where the employee works
+• name—a string that holds the employee’s name 
+• idNumber—a n int variable that holds the employee’s ID number 
+• department—a string that holds the name of the department where the employee works
 
 • position—a string that holds the employee’s job title The class should have 
 the following constructors:
 • A constructor that accepts the following values as arguments and assigns them 
 to the appropriate member variables: employee’s name, employee’s ID number, 
-depart? ment, and position.
+department, and position.
 • A constructor that accepts the following values as arguments and assigns 
 them to the appropriate member variables: employee’s name and ID number. The 
 department and position fields should be assigned an empty string
@@ -51,6 +51,10 @@ int main () {
     for (auto& e : employees) {
         std::cout << e;
     }
+
+
+    std::cout << "Press enter to continue...";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     return 0;
 }

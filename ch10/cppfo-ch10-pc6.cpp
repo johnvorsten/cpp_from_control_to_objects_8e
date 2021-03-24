@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <map>
+#include <limits>
 
 using namespace std;
 
@@ -114,6 +115,7 @@ int main () {
     // result.choice = both;
     int n_vowels;
     int n_consonants;
+    char user_response_rerun;
 
     do {
     result = user_input();
@@ -147,7 +149,12 @@ int main () {
             return 0;
             break;
     }
-    } while (result.choice == again || result.choice > 5);
+
+    std::cout << "Do you want to go again? [y/n]" << "\n";
+    std::cin >> user_response_rerun;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    } while (result.choice == again || result.choice > 5 || (user_response_rerun == 'y'));
 
 
     return 0;

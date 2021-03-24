@@ -26,12 +26,15 @@ string user_input() {
 
 int main () {
 
-    // auto str = user_input();
-    string str;
-    str = "This is a test sentence";
+    auto str = user_input();
+    // string str;
+    // str = "This is a test sentence";
     auto count = word_counter(str.c_str(), str.size());
     std::cout << "The sentence has " << count << " words" << endl;
 
+    std::cout << "Press enter to continue...";
+    // NOTE - anything on standard input is ignored, but the program will hang until it receives \n
+    cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
 
     return 0;
 }

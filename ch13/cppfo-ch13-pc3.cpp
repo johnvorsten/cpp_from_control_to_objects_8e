@@ -31,6 +31,7 @@ brake function, get the current speed of the car and display it.
 #include <exception>
 #include <chrono>
 #include <ctime>
+#include <limits>
 
 // Class declarations
 namespace assignment {
@@ -113,6 +114,9 @@ int main () {
         car.brake();
         std::cout << "The new speed is: " << car.get_speed() << endl;
     }
+
+    std::cout << "Press enter to continue...";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     return 0;
 }

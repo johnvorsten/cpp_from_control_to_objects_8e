@@ -206,7 +206,7 @@ class ForwardSortedLinkedList {
                 value = currentNode->data;
                 delete currentNode;
             }
-            else if (currentNode->next && count!= index) {
+            else if (currentNode->next && count != index) {
                 // Node is linked but we fucked up the counting
                 throw std::logic_error("Something is fucky"
                     " Node is linked but we fucked up the counting");
