@@ -17,6 +17,17 @@ size_t factorial(size_t n) {
         return n * factorial(n - 1);
 }
 
+int starsCount(string& str, int index) {
+    if (str.length() < index) {
+        return 0;
+    }
+    else if (str[index] == '*') {
+        return 1 + starsCount(str, index + 1);
+    }
+
+    return starsCount(str, index + 1);
+}
+
 int main () {
 
     // Factorial recursion
@@ -24,6 +35,12 @@ int main () {
     std::cout << "The factorial of 8 is : " << factorial(8) << endl;
     std::cout << "The factorial of 7 is : " << factorial(7) << endl;
     std::cout << "The factorial of 5 is : " << factorial(5) << endl;
+
+
+    string str = "*341nngfj**jrka*";
+    std::cout << "Number of stars..." << starsCount(str, 0) << std::endl;
+    std::cin.ignore(100, '\n');
+
 
 
     return 0;
