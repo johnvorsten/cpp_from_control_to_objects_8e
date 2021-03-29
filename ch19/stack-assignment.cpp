@@ -374,5 +374,13 @@ int main () {
     // Test matching_group
     test_matching_group();
 
+
+    try {
+        // Do something
+    } catch (const std::logic_error& e) {
+        // Print something
+    }
+
+    
     return 0;
 }

@@ -26,10 +26,10 @@ function works properly.*/
 
 
 #include <iostream>
-#include "BinarySearchTree.h"
+#include "BinarySearchTree.hpp"
 #include "test_BST_search.cpp"
-#include "test_BST_deleteNode"
-
+#include "test_BST_deleteNode.cpp"
+#include <vector>
 
 using namespace std;
 
@@ -44,6 +44,16 @@ int main() {
     integerTree.insert(8);
     integerTree.insert(55);
     integerTree.preorderTraversal();
+
+    // Test search function
+    try {
+        test::test_BST_search();
+    } catch(const std::logic_error& e) {
+        std::cout << e.what();
+    }
+
+    // Test delete function
+    
     
     return 0;
 }
