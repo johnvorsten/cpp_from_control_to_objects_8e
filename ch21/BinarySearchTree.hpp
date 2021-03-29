@@ -83,8 +83,7 @@ bool BinarySearchTree<elemType>::search
 }//end search
 
 template <class elemType>
-void BinarySearchTree<elemType>::insert
-(const elemType& insertItem)
+void BinarySearchTree<elemType>::insert(const elemType& insertItem)
 {
     TreeNode<elemType> *current; //pointer to traverse the tree
     TreeNode<elemType> *trailCurrent; //pointer behind current

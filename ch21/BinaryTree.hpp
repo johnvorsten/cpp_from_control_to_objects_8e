@@ -5,9 +5,24 @@
 //  Created by ali.berrached on 7/5/19.
 //  Copyright © 2019 ali.berrached. All rights reserved.
 
-//Class BinaryTree defines a binary tree (i.e. all properties that are common to all binary trees).  It's a virtual class that is used primarily to derived class BinarySearchTree which is defined in file BinarySearchTree.h
-//Remember that a binary search tree (BST) is a binary tree that is organized in such a way that the keys of all nodes in the letf-subtree of every node X are smaller that the key of node X and the keys of all nodes in the right-subtree of every node X are larger that the key of node X.
-//The only functions that make a BST different from non-BSTs are the insert, delete, and search functions. These functions are defined as virtual functions in the class BinaryTree and will be implemented in class BinarySearchTree.
+//
+
+/*Class BinaryTree defines a binary tree (i.e. all properties 
+that are common to all binary trees).  It's a virtual class 
+that is used primarily to derived class BinarySearchTree 
+which is defined in file BinarySearchTree.h
+
+Remember that a binary search tree (BST) is a binary tree 
+that is organized in such a way that the keys of all nodes 
+in the letf-subtree of every node X are smaller that the 
+key of node X and the keys of all nodes in the right-subtree 
+of every node X are larger that the key of node X.
+
+The only functions that make a BST different from non-BSTs 
+are the insert, delete, and search functions. These functions 
+are defined as virtual functions in the class BinaryTree and 
+will be implemented in class BinarySearchTree.
+*/
 
 #ifndef BinaryTree_h
 #define BinaryTree_h
