@@ -105,6 +105,9 @@ public:
     //               that has the same data field as insertItem, a
     //               new node with the data field set to insertItem is created
     //               and inserted in the binary search tree.
+
+    virtual void recursiveInsert(const elemType& insertItem) = 0;
+    /* Recursively insert element into binary tree */
     
     virtual void deleteNode(const elemType& deleteItem) = 0;
     //Function to delete deleteItem from the binary tree
@@ -126,7 +129,7 @@ public:
     
 private:
     void copyTree(TreeNode<elemType>* &copiedTreeRoot,
-                  TreeNode<elemType>* otherTreeRoot);
+                 TreeNode<elemType>* otherTreeRoot);
     //Makes a copy of the binary tree to which
     //otherTreeRoot points.
     //Postcondition: The pointer copiedTreeRoot points to
@@ -235,8 +238,7 @@ int BinaryTree<elemType>::treeLeavesCount() const
 
 
 template <class elemType>
-void BinaryTree<elemType>::inorder
-(TreeNode<elemType> *p) const
+void BinaryTree<elemType>::inorder(TreeNode<elemType> *p) const
 {
     if (p != nullptr)
     {
@@ -247,8 +249,7 @@ void BinaryTree<elemType>::inorder
 }
 
 template <class elemType>
-void BinaryTree<elemType>::preorder
-(TreeNode<elemType> *p) const
+void BinaryTree<elemType>::preorder(TreeNode<elemType> *p) const
 {
     if (p != nullptr)
     {
@@ -261,8 +262,7 @@ void BinaryTree<elemType>::preorder
 }
 
 template <class elemType>
-void BinaryTree<elemType>::postorder
-(TreeNode<elemType> *p) const
+void BinaryTree<elemType>::postorder(TreeNode<elemType> *p) const
 {
     if (p != nullptr)
     {
@@ -275,8 +275,7 @@ void BinaryTree<elemType>::postorder
  ** functions to perform tree deep copy
  *****************************************/
 template <class elemType>
-void  BinaryTree<elemType>::copyTree
-(TreeNode<elemType>* &copiedTreeRoot,
+void  BinaryTree<elemType>::copyTree(TreeNode<elemType>* &copiedTreeRoot,
  TreeNode<elemType>* otherTreeRoot)
 {// Helper function for tree deep copying
     // It copies tree rooted at otherTreeRoot into a tree rooted at copiedTreeRoot
@@ -295,8 +294,7 @@ void  BinaryTree<elemType>::copyTree
 
 //Class copy constructor with deep copying
 template <class elemType>
-BinaryTree<elemType>::BinaryTree
-(const BinaryTree<elemType>& otherTree)
+BinaryTree<elemType>::BinaryTree(const BinaryTree<elemType>& otherTree)
 {
     if (otherTree.root == nullptr) //otherTree is empty
         root = nullptr;
@@ -306,8 +304,7 @@ BinaryTree<elemType>::BinaryTree
 
 //Overload the assignment operator for deep coping
 template <class elemType>
-const BinaryTree<elemType>& BinaryTree<elemType>::
-operator=(const BinaryTree<elemType>& otherTree)
+const BinaryTree<elemType>& BinaryTree<elemType>::operator=(const BinaryTree<elemType>& otherTree)
 {
     if (this != &otherTree) //avoid self-copy
     {
@@ -334,8 +331,8 @@ BinaryTree<elemType>::~BinaryTree()
 }
 
 template <class elemType>
-void  BinaryTree<elemType>::destroy(TreeNode<elemType>* &p)
-{// Helper function for class destructor
+void  BinaryTree<elemType>::destroy(TreeNode<elemType>* &p){
+    // Helper function for class destructor
     if (p != nullptr)
     {
         destroy(p->left);
@@ -347,8 +344,7 @@ void  BinaryTree<elemType>::destroy(TreeNode<elemType>* &p)
 /*  End of class destructor functions */
 
 template<class elemType>
-int BinaryTree<elemType>::height
-(TreeNode<elemType> *p) const
+int BinaryTree<elemType>::height(TreeNode<elemType> *p) const
 {
     if (p == nullptr)
         return 0;
@@ -365,22 +361,7 @@ int BinaryTree<elemType>::max(int x, int y) const
         return y;
 }
 
-template <class elemType>
-int BinaryTree<elemType>::nodeCount(TreeNode<elemType> *p) const
-{
-    cout << "Write the definition of the function nodeCount."
-    << endl;
-    
-    return 0;
-}
 
-template <class elemType>
-int BinaryTree<elemType>::leavesCount(TreeNode<elemType> *p) const
-{
-    cout << "Write the definition of the function leavesCount."
-    << endl;
-    
-    return 0;
-}
+
 #endif /* BinaryTree_h */
 

@@ -27,8 +27,7 @@ function works properly.*/
 
 #include <iostream>
 #include "BinarySearchTree.hpp"
-#include "test_BST_search.cpp"
-#include "test_BST_deleteNode.cpp"
+#include "test_BST.cpp"
 #include <vector>
 
 using namespace std;
@@ -36,14 +35,14 @@ using namespace std;
 int main() {
     BinarySearchTree<int> integerTree;
     
-    integerTree.insert(12);
-    integerTree.insert(38);
-    integerTree.insert(25);
-    integerTree.insert(5);
-    integerTree.insert(15);
-    integerTree.insert(8);
-    integerTree.insert(55);
-    integerTree.preorderTraversal();
+    // integerTree.insert(12);
+    // integerTree.insert(38);
+    // integerTree.insert(25);
+    // integerTree.insert(5);
+    // integerTree.insert(15);
+    // integerTree.insert(8);
+    // integerTree.insert(55);
+    // integerTree.preorderTraversal();
 
     // Test search function
     try {
@@ -53,7 +52,32 @@ int main() {
     }
 
     // Test delete function
+    try {
+        test::test_BST_deleteNode();
+    } catch(const std::logic_error& e) {
+        std::cout << e.what();
+    }
+
+    // Test leaves count function
+    try {
+        test::test_BST_leavesCount();
+    } catch(const std::logic_error& e) {
+        std::cout << e.what();
+    }
     
-    
+    // Test node count function
+    try {
+        test::test_BST_nodeCount();
+    } catch(const std::logic_error& e) {
+        std::cout << e.what();
+    }
+
+    // Test recursive insert
+    try {
+        test::test_BST_recursiveInsert();
+    } catch(const std::logic_error& e) {
+        std::cout << e.what();
+    }
+
     return 0;
 }
