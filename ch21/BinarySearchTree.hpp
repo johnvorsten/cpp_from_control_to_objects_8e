@@ -36,6 +36,11 @@ public:
     //               insertItem, a node with the data
     //               insertItem is created and inserted in the
     //               binary search tree.
+
+    void recursiveInsert(const elemType& insertItem);
+    /* Recursively insert item into binary tree*/
+
+    void _recursiveInsert(TreeNode<elemType>*& parentNode, TreeNode<elemType>*& newNode);
     
     void deleteNode(const elemType& deleteItem);
     //Function to delete deleteItem from the binary search tree
@@ -56,8 +61,7 @@ private:
 
 
 template <class elemType>
-bool BinarySearchTree<elemType>::search
-(const elemType& searchItem) const
+bool BinarySearchTree<elemType>::search(const elemType& searchItem) const
 {
     TreeNode<elemType> *current;
     bool found = false;
@@ -127,8 +131,7 @@ void BinarySearchTree<elemType>::insert(const elemType& insertItem)
 }//end insert
 
 template <class elemType>
-void BinarySearchTree<elemType>::deleteNode
-(const elemType& deleteItem)
+void BinarySearchTree<elemType>::deleteNode(const elemType& deleteItem)
 {
     TreeNode<elemType> *current; //pointer to traverse the tree
     TreeNode<elemType> *trailCurrent; //pointer behind current
@@ -176,12 +179,11 @@ void BinarySearchTree<elemType>::deleteNode
 } //end deleteNode
 
 template <class elemType>
-void BinarySearchTree<elemType>::deleteFromTree
-(TreeNode<elemType>* &p)
+void BinarySearchTree<elemType>::deleteFromTree(TreeNode<elemType>* &p)
 {
-    TreeNode<elemType> *current; //pointer to traverse the tree
-    TreeNode<elemType> *trailCurrent;  //pointer behind current
-    TreeNode<elemType> *temp;      //pointer to delete the node
+    TreeNode<elemType> *current; // pointer to traverse the tree
+    TreeNode<elemType> *trailCurrent;  // pointer behind current
+    TreeNode<elemType> *temp;      // pointer to delete the node
     
     if (p == nullptr)
         cout << "Error: The node to be deleted does not exist."
