@@ -1,6 +1,7 @@
 #include <cctype>
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 
 using namespace std;
 
@@ -104,8 +105,6 @@ int main () {
     res = strlen(cstrptr);
     
     }
-
-
 
     return 0;
 }
