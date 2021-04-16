@@ -1,3 +1,16 @@
+/*4. Absolute Value Template
+
+Write a function template that accepts an argument 
+and returns its absolute value. The absolute value 
+of a number is its value with no sign. For example,
+ the absolute value of -5 is 5, and the absolute 
+ value of 2 is 2. Test the template in a simple driver 
+ program being sure to send the template short, int, 
+ double, float, and long data values.
+ 
+ */
+
+
 #include <cmath>
 #include <iostream>
 #include <limits>

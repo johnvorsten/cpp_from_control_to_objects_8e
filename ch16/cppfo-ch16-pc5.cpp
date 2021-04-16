@@ -1,3 +1,17 @@
+/*16.5:
+=====
+
+Write a function template called total. The function will keep a running
+total of values entered by the user, then return the total. The function will
+accept one int argument that is the number of values the function is to read.
+Test the template in a simple program that would prompt the user to enter
+the number of values to read and then read these values from stdin and output
+the total. The program will repeat this procedure first for integers, then for
+doubles.
+
+*/
+
+
 #include <string>
 #include <iostream>
 #include <iomanip>

@@ -61,7 +61,6 @@ void test_BST_search() {
     // Leafs are defined as a node that has no children
     // Which nodes do not have children in our test case? Only the tail..
     // We can insert values that will be leaf, such as 1.5, 2.5...
-    bst_double.insert(1.5);
     bst_double.insert(2.5);
     bst_double.insert(16.5);
     for (auto& val : {1.5, 2.5, 16.5}) {
@@ -120,6 +119,7 @@ void test_BST_deleteNode() {
         msg += "\nin " + std::string(__func__);
         throw std::logic_error(msg);
     }
+    std::cout << "Deleted values 'E' and '5.0' from trees" << "\n";
     std::cout << "Displaying Trees\n";
     bst_double.inorderTraversal();
     std::cout << "\n";
@@ -145,12 +145,14 @@ void test_BST_deleteNode() {
         msg += "\nin " + std::string(__func__);
         throw std::logic_error(msg);
     }
+    std::cout << "Deleted values 'C' and '3.0' from trees" << "\n";
     std::cout << "Displaying Trees\n";
     bst_double.inorderTraversal();
     std::cout << "\n";
     bst_str.inorderTraversal();
     std::cout << "\n\n";
     // Create tree with a left only
+    std::cout << "Deleted values 'D' and '4.0' from trees" << "\n";
     bst_double.deleteNode(4.0);
     bst_str.deleteNode("D");
 
@@ -174,6 +176,7 @@ void test_BST_deleteNode() {
         msg += "\nin " + std::string(__func__);
         throw std::logic_error(msg);
     }
+    std::cout << "Deleted values 'B' and '2.0' from trees" << "\n";
     std::cout << "Displaying Trees\n";
     bst_double.inorderTraversal();
     std::cout << "\n";
@@ -199,6 +202,7 @@ void test_BST_deleteNode() {
         msg += "\nin " + std::string(__func__);
         throw std::logic_error(msg);
     }
+    std::cout << "Deleted values 'A' and '1.0' from trees" << "\n";
     std::cout << "Displaying Trees\n";
     bst_double.inorderTraversal();
     std::cout << "\n";
@@ -229,11 +233,6 @@ void test_BST_deleteNode() {
         msg += "\nin " + std::string(__func__);
         throw std::logic_error(msg);
     }
-    std::cout << "Displaying Trees\n";
-    bst_double.inorderTraversal();
-    std::cout << "\n";
-    bst_str.inorderTraversal();
-    std::cout << "\n\n";
 
     std::cout << "Success - Passed " << __func__ << "\n\n";   
 }
@@ -381,6 +380,12 @@ void test_BST_nodeCount() {
     std::cout << "Success - Passed " << __func__ << "\n\n";   
 }
 
+template <typename T>
+void assertm(T val, T test, string msg) {
+    if (val != test) {
+        throw std::logic_error(msg);
+    }
+}
 
 void test_BST_recursiveInsert() {
     std::cout << "Beginning " << __func__ << endl;
@@ -404,13 +409,27 @@ void test_BST_recursiveInsert() {
     bst_str.inorderTraversal();
     std::cout << "\n\n";
 
-    if (bst_double. != 0) {
-        string msg="Error, Incorrect number of nodes: ";
-        msg += std::to_string(bst_double3.treeNodeCount()) + " in BinarySearchTree";
-        msg += "\nin " + std::string(__func__);
-        throw std::logic_error(msg);
-    }
+    // Test element by elemtn
+    // Is there a testing framework that allows for reflection??
+    auto root = bst_double.get_root();
+    string msg="Error, Incorrect BST ";
+    msg += "in " + std::string(__func__);
+    assertm(root->data, 1.0, msg);
+    assertm(root->left->data, 0.5, msg);
+    assertm(root->right->data, 2.0, msg);
+    assertm(root->right->left->data, 1.5, msg);
+    assertm(root->right->right->data, 3.0, msg);
+    assertm(root->right->right->right->data, 4.0, msg);
 
+    auto root_str = bst_str.get_root();
+    assertm(root_str->data, std::string("A"), msg);
+    assertm(root_str->left->data, std::string("@"), msg);
+    assertm(root_str->right->data, std::string("B"), msg);
+    assertm(root_str->right->left->data, std::string("AB"), msg);
+    assertm(root_str->right->right->data, std::string("C"), msg);
+    assertm(root_str->right->right->right->data, std::string("D"), msg);
+
+    std::cout << "Success - Passed " << __func__ << "\n\n";  
 }
 
 }; // End namespace

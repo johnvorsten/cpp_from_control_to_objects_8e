@@ -126,6 +126,10 @@ public:
     
     ~BinaryTree();
     //Destructor
+
+    const TreeNode<elemType>* get_root() {
+        return this->root;
+    }
     
 private:
     void copyTree(TreeNode<elemType>* &copiedTreeRoot,
